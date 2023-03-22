@@ -45,5 +45,38 @@ S0 (état initial) = {E0}
 
 Sf (état final) = {M}
 
+| State | 0  | 1  | 2  | 3  | 4  | 5  | 6 | 7 | 8 | 9 | :  |
+|-------|----|----|----|----|----|----|---|---|---|---|----|
+| E0    | H1 | H1 | H2 |    |    |    |   |   |   |   |    |
+| H1    | H  | H  | H  | H  | H  | H  | H | H | H | H |    |
+| H2    | H  | H  | H  | H  |    |    |   |   |   |   |    |
+| H     |    |    |    |    |    |    |   |   |   |   | M1 |
+| M1    | M2 | M2 | M2 | M2 | M2 | M2 |   |   |   |   |    |
+| M2    | M  | M  | M  | M  | M  | M  | M | M | M | M |    |
+| M     |    |    |    |    |    |    |   |   |   |   |    |
+
 #### Question 3
+
+```JavaScript
+function automate(input: string){ // Exemple: "13:08"
+  let currentNode: Etat = E0;
+  for (let char in input) { // On itère sur les caractères de l'entrée
+    const transition = currentNode.transitions[char];
+    currentNode = transition.to;
+    console.log(`${currentNode} ${char}`);
+  }
+
+  if (currentNode == EF) {
+    print("La suite de caractères en entrée est reconnue")
+  }else{
+    throw new Error("Chaine de caractères non reconnue");
+  }
+}
+```
+
+#### Question 4
+
+Pour traiter les erreurs, on peut en cas de lecture d'un caractère inattentdu faire une transition vers l'état courant. Ainsi on laisse une autre chance de lire un caractère valide.
+
+#### Question 5
 
