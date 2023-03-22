@@ -35,10 +35,15 @@ Finalement on saisit la valeur des unités des minutes entre 0 et 9 et on arrive
 
 #### Question 2
 
-S = {E0, H1, H2, H, M1, M2, M}
-I = {0,1,2,3,4,5,6,7,8,9,:}
-delta = {(E0,H1,{0,1}), (E0, H2, {2}), (H1,H, {0..9}), (H2,H, {0,1,2,3}), (H,M1, {:}), (M1, M2, {0..5}), (M2, M, {0..9})}
-S0 = {E0}
-Sf = {M}
+S (états) = {E0, H1, H2, H, M1, M2, M}
 
-#### 
+I (alphabet) = {0,1,2,3,4,5,6,7,8,9,:}
+
+delta (transitions) = {(E0,H1,{0,1}), (E0, H2, {2}), (H1,H, {0..9}), (H2,H, {0,1,2,3}), (H,M1, {:}), (M1, M2, {0..5}), (M2, M, {0..9})}
+
+S0 (état initial) = {E0}
+
+Sf (état final) = {M}
+
+#### Question 3
+
