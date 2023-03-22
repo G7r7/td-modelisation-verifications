@@ -1,6 +1,8 @@
 # TD Modélisation et Vérification
 
-## 1.1 Question de cours
+## 1. Notions de bases (rappels et/ou introduction)
+
+### 1.1 Question de cours
 
 Définition d'une machine a état fini (FSM) de Mealy :
 
@@ -12,7 +14,31 @@ b) Une FSM est partiellement specifiée quand certaines transitions ne sont pas 
 
 c) Une FSM est fortement connectée lorsque tous ses états sont accessibles les un des autres via des transitions.
 
-d) Une FSM est minimale si elle a le nombre minimum d'états néscéssaires pour représenter le comportement spécifié.
+d) Une FSM est minimale si elle a le nombre minimum d'états nécéssaires pour représenter le comportement spécifié.
 
+## 2. Modélisation avec les automates
 
+### Exercice 1
 
+#### Question 1
+
+Cet automate semble décrire un horloge à affichage numérique (hh:mm).\
+L'état initial est l'état `E0`. On doit d'abord afficher les heures.\
+Si le premier chiffe de l'heure actuelle est 0 ou 1 (< 20h) on part vers l'état `H1`.\
+Sinon on part vers l'état `H2`.\
+Dans l'état `H1`on peut saisir les unités des heures entre 0 et 9 (00h à 19h).\
+Dans l'état `H2`on peut saisir les unités des heures entre 0 et 3 (20h à 23h).\
+On passe ensuite à l'état `H`quand on a fini d'afficher les heures.\
+On affiche le caractère `:` et on passe à l'état `M1` pour afficher les dizaines des minutes.\
+On affiche un chiffre entre 0 et 5 pour les dizaines et on passe à l'état `M2`.\
+Finalement on saisit la valeur des unités des minutes entre 0 et 9 et on arrive à l'état final `M`.\
+
+#### Question 2
+
+S = {E0, H1, H2, H, M1, M2, M}
+I = {0,1,2,3,4,5,6,7,8,9,:}
+delta = {(E0,H1,{0,1}), (E0, H2, {2}), (H1,H, {0..9}), (H2,H, {0,1,2,3}), (H,M1, {:}), (M1, M2, {0..5}), (M2, M, {0..9})}
+S0 = {E0}
+Sf = {M}
+
+#### 
