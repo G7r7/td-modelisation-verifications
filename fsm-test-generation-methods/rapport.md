@@ -118,3 +118,25 @@ La sortie est correcte cependant à la fin du tour de tranisition on ne revient 
 | Output State| S2 | S2 | S1 |
 
 Lorsqu'on applique la DS on voit que chacun des états produits une sortie différente. Cependant si on regarde les états de sortie on voit que S1 fini dans S2 alors que dans l'implémentation S1 fini dans S0. On peut conclure que l'implémentation I est fausse.
+
+
+### Exercice 2
+
+### Question 1
+
+| Input (TS) | ababcbcca |
+|------------|-----------|
+| Output     | 000000011 |
+
+### Question 2
+
+| State  | S0 | S1 | S2 | S0 | S1 | S2 | S0 | S1 | S2 |
+|--------|----|----|----|----|----|----|----|----|----|
+| Input  | c  | c  | c  | ba | ba | ba | a  | a  | a  |
+| Output | 1  | 0  | 0  | 00 | 01 | 00 | 0  | 0  | 1  |
+
+Séquences UIO :
+
+S0 = c
+S1 = ba
+S2 = a
