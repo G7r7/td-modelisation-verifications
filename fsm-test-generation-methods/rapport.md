@@ -80,3 +80,41 @@ Pour traiter les erreurs, on peut en cas de lecture d'un caractère inattentdu f
 
 #### Question 5
 
+
+## 3. Methodes de génération de tests à partir de machines à états finis
+
+### Exercice 1
+
+#### Question 1
+
+| Input (TS) | ababab |
+|------------|--------|
+| Output     | 010010 |
+
+#### Question 2
+
+| State       | S0 | S1 | S2 | S0 | S1 | S2 | S0 | S1 | S2 |
+|-------------|----|----|----|----|----|----|----|----|----|
+| Input (TS)  | a  | a  | a  | b  | b  | b  | ab | ab | ab |
+| Output      | 0  | 1  | 0  | 1  | 0  | 0  | 01 | 10 | 00 |
+| Output State| S0 | S1 | S2 | S2 | S0 | S1 | S2 | S0 | S1 |
+
+DS = a.b
+
+#### Question 3
+
+| Input (TS) | ababab |
+|------------|--------|
+| Output     | 010010 |
+
+La sortie est correcte cependant à la fin du tour de tranisition on ne revient pas à l'état initial. On peut considérer que l'implémentation est mauvaise.
+
+#### Question 4
+
+| State       | S0 | S1 | S2 |
+|-------------|----|----|----|
+| Input (TS)  | ab | ab | ab |
+| Output      | 01 | 10 | 00 |
+| Output State| S2 | S2 | S1 |
+
+Lorsqu'on applique la DS on voit que chacun des états produits une sortie différente. Cependant si on regarde les états de sortie on voit que S1 fini dans S2 alors que dans l'implémentation S1 fini dans S0. On peut conclure que l'implémentation I est fausse.
